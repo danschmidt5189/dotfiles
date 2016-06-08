@@ -1,8 +1,8 @@
 [user]
-  name = {{ git_config_name }}
-  email = {{ git_config_email }}
+    name = {{ git_config_name }}
+    email = {{ git_config_email }}
 [core]
-  editor = {{ git_config_editor }}
+    editor = {{ git_config_editor }}
 [alias]
-  tree = log --graph --full-history --all --color --date=short --pretty=format:\"%Cred%x09%h %Creset%ad%Cblue%d %Creset %s %C(bold)(%an)%Creset\"
-  tidy = rebase -i origin/master
+    tree = log --graph --full-history --all --color --date=short --pretty=format:\"%Cred%x09%h %Creset%ad%Cblue%d %Creset %s %C(bold)(%an)%Creset\"
+    tidy = rebase -i origin/master
