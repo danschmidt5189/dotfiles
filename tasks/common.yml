@@ -2,6 +2,12 @@
 - name: Run oh-my-zsh install script.
   raw: sh -c "$(curl -fsSL {{oh_my_zsh_install_url}})"
 
+- name: Modify oh-my-zsh plugins.
+  lineinfile:
+    dest: "{{ansible_env.HOME}}/.zshrc"
+    line: plugins=({{oh_my_zsh_plugins}})
+    regexp: ^plugins=
+
 - name: Create .config directories.
   file: name={{ansible_env.HOME}}/.config/git state=directory
 

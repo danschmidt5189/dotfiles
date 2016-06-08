@@ -1,0 +1,7 @@
+- hosts: lap
+  vars_files:
+    - vars/main.yml
+    - vars/{{ansible_os_family}}.yml
+  tasks:
+    - include: tasks/install-{{ansible_os_family}}.yml
+    - include: tasks/common.yml

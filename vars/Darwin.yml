@@ -1,18 +1,2 @@
 # Darwin-only vars
-brew_pkgs:
-  - zsh
-  - coreutils
-  - ssh-copy-id
-  - tree
-  - wget
-  - openssl
-  - libyaml
-  - tmux
-  - git
-  - vim
-
-brew_taps:
-  - caskroom/versions
-
-brew_casks:
-  - sublime-text3
+oh_my_zsh_plugins: brew calvpn docker gitfast nyan osx ssh-agent tmux vagrant vi-mode zsh-syntax-highlighting

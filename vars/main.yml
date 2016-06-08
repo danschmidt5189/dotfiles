@@ -1,2 +1,29 @@
-# URL of the oh-my-zsh install script to use. Point this at your fork.
+# all vars (not all apply to all operating systems)
+
+# homebrew casks to use (Darwin-only)
+brew_casks:
+  - sublime-text3
+
+# homebrew packages to install (Darwin-only)
+brew_pkgs:
+  - brew-cask
+  - coreutils
+  - zsh
+  - ssh-copy-id
+  - tree
+  - wget
+  - openssl
+  - libyaml
+  - tmux
+  - git
+  - vim
+
+# homebrew taps to use (Darwin-only)
+brew_taps:
+  - caskroom/versions
+
+# URL of the oh-my-zsh install script. Point at fork!
 oh_my_zsh_install_url: https://raw.githubusercontent.com/danschmidt5189/oh-my-zsh/master/tools/install.sh
+
+# oh-my-zsh plugins to install. Override per-operating system as necessary.
+oh_my_zsh_plugins: gitfast nyan vi-mode
