@@ -1,0 +1,12 @@
+# common tasks (all operating systems)
+- name: Run oh-my-zsh install script.
+  raw: sh -c "$(curl -fsSL {{oh_my_zsh_install_url}})"
+
+- name: Create .config directories.
+  file: name={{ansible_env.HOME}}/.config/git state=directory
+
+- name: Copy global gitignore.
+  copy: src={{item.key}} dest={{item.value}}
+  with_dict:
+    ../files/git/ignore: "{{ansible_env.HOME}}/.config/git/ignore"
+    ../files/git/config: "{{ansible_env.HOME}}/.gitconfig"

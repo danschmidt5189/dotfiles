@@ -1,0 +1,2 @@
+# URL of the oh-my-zsh install script to use. Point this at your fork.
+oh_my_zsh_install_url: https://raw.githubusercontent.com/danschmidt5189/oh-my-zsh/master/tools/install.sh
