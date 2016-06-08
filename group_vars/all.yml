@@ -22,6 +22,15 @@ brew_pkgs:
 brew_taps:
   - caskroom/versions
 
+# gitconfig: user.name
+git_config_name: Daniel Schmidt
+
+# gitconfig: core.editor
+git_config_editor: vim
+
+# gitconfig: user.email
+git_config_email: danschmidt5189@berkeley.edu
+
 # URL of the oh-my-zsh install script. Point at fork!
 oh_my_zsh_install_url: https://raw.githubusercontent.com/danschmidt5189/oh-my-zsh/master/tools/install.sh
 

@@ -8,11 +8,11 @@
     line: plugins=({{oh_my_zsh_plugins}})
     regexp: ^plugins=
 
-- name: Create .config directories.
+- name: Create git template directories.
   file: name={{ansible_env.HOME}}/.config/git state=directory
 
-- name: Copy global gitignore.
-  copy: src={{item.key}} dest={{item.value}}
+- name: Copy git templates.
+  template: src={{item.key}} dest={{item.value}}
   with_dict:
-    ../files/git/ignore: "{{ansible_env.HOME}}/.config/git/ignore"
-    ../files/git/config: "{{ansible_env.HOME}}/.gitconfig"
+    ../templates/git/ignore.j2: "{{ansible_env.HOME}}/.config/git/ignore"
+    ../templates/git/config.j2: "{{ansible_env.HOME}}/.gitconfig"

@@ -1,8 +1,8 @@
 [user]
-  name = Daniel Schmidt
-  email = danschmidt5189@berkeley.edu
+  name = {{ git_config_name }}
+  email = {{ git_config_email }}
 [core]
-  editor = vim
+  editor = {{ git_config_editor }}
 [alias]
   tree = log --graph --full-history --all --color --date=short --pretty=format:\"%Cred%x09%h %Creset%ad%Cblue%d %Creset %s %C(bold)(%an)%Creset\"
   tidy = rebase -i origin/master
