@@ -6,20 +6,24 @@ Manage packages and settings across development machines, namely:
 - Configure git (ignores, config)
 - Customize zsh
 
-To install locally on Mac OSX:
+## Bootstrapping OSX
+
+Local provisioning on OSX can be done via a bootstrap script `bin/bootstrap-osx.sh`. Its only dependency is xcode-select, which must be installed via the app store.
 
 ```bash
-git clone git@github.com:danschmidt5189/dotfiles.git && cd dotfiles
-chmod u+x bin/*
-./bin/bootstrap-osx.sh
+source <(curl -s "https://raw.githubusercontent.com/danschmidt5189/dotfiles/master/bin/bootstrap-osx.sh") \
+    ~/Projects/github.com/danschmidt5189/dotfiles \
+    git@github.com:danschmidt5189/dotfiles.git
 ```
 
-To provision:
+## Running Ansible
+
+Once the repo's been bootstrapped, machines can be provisioned using Ansible plays.
 
 ```bash
-# On the localhost
-ansible-playbook configure.yml -c local -l localhost -v
+# Provision localhost
+ansible-playbook play-configure.yml -c local -l localhost
 
-# On LAP machines
-ansible-playbook configure.yml -l lap -v
+# Provision remote host
+ansible-playbook play-configure.yml -l {{ hosts to target }}
 ```

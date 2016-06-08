@@ -42,9 +42,8 @@ else
 fi
 
 # Clone the repo
-git clone --quiet $git_repo $project_dir
+git clone $git_repo $project_dir
 
 # Provision
 pushd $project_dir
-  ansible-playbook $boot_play -c local -l localhost -v
-popd
+ansible-playbook $boot_play -c local -l localhost
