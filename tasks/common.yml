@@ -1,6 +1,10 @@
 # common tasks (all operating systems)
+- name: Change shell.
+  raw: /usr/bin/chsh -s $(which zsh)
+  become: yes
+
 - name: Run oh-my-zsh install script.
-  raw: sh -c "$(curl -fsSL {{oh_my_zsh_install_url}})"
+  raw: /bin/sh -c "$(curl -fsSL {{oh_my_zsh_install_url}})"
 
 - name: Modify oh-my-zsh plugins.
   lineinfile:
