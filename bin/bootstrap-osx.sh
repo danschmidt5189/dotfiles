@@ -6,9 +6,6 @@ project_dir=${1-$PWD}
 
 # dotfiles git repo
 git_repo=${2-"git@github.com:danschmidt5189/dotfiles.git"}
-
-# Play to run
-boot_play="play-configure.yml"
 # === END ARGS === #
 
 # XCode can't be installed from the script
@@ -46,4 +43,4 @@ git clone $git_repo $project_dir
 
 # Provision
 pushd $project_dir
-ansible-playbook $boot_play -c local -l localhost
+ansible-playbook play-configure.yml --connection=local --limit=localhost --verbose
