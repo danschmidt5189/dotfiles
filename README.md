@@ -11,8 +11,8 @@ Manage packages and settings across development machines, namely:
 Local provisioning on OSX can be done via a bootstrap script `bin/bootstrap-osx.sh`. Its only dependency is xcode-select, which must be installed via the app store.
 
 ```bash
-source <(curl -s "https://raw.githubusercontent.com/danschmidt5189/dotfiles/master/bin/bootstrap-osx.sh") \
-    ~/Projects/github.com/danschmidt5189/dotfiles \
+source <(curl -s "https://raw.githubusercontent.com/danschmidt5189/dotfiles/master/bin/bootstrap-osx.sh?token=ACbfgVNDn4BTXaCFf9NauVzOE4IlPGR0ks5XYYzawA%3D%3D") \
+    ./dotfiles \
     git@github.com:danschmidt5189/dotfiles.git
 ```
 
