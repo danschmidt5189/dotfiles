@@ -19,4 +19,4 @@ else
 fi
 
 # Provision
-ansible-playbook -v -i inventory play-local.yml $@
+ansible-playbook setup-current-user.yml -v -c local -i inventory -l localhost $@
