@@ -1,6 +1,7 @@
 # common tasks (all operating systems)
 - name: Change shell.
   raw: /usr/bin/chsh -s $(which zsh)
+  when: not ('zsh' in lookup('env','SHELL'))
   become: yes
 
 - name: Run oh-my-zsh install script.
