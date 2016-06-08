@@ -1,0 +1,50 @@
+#!/bin/sh
+
+# === ARGS === #
+# where to install the project
+project_dir=${1-$PWD}
+
+# dotfiles git repo
+git_repo=${2-"git@github.com:danschmidt5189/dotfiles.git"}
+
+# Play to run
+boot_play="play-configure.yml"
+# === END ARGS === #
+
+# XCode can't be installed from the script
+if [ command -v xcode-select >/dev/null 2>&1 ]; then
+  echo "Please install xcode-select from the App store"
+  exit 1
+fi
+
+# Homebrew
+if [ command -v brew >/dev/null 2>&1 ]; then
+  echo "Installing Homebrew..."
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else
+  echo "Homebrew already installed, skipping..."
+fi
+
+# Git
+if [ command -v git >/dev/null 2>&1 ]; then
+  echo "Installing Git..."
+  brew install git
+else
+  echo "Git already installed, skipping..."
+fi
+
+# Ansible
+if [ command -v ansible >/dev/null 2>&1 ]; then
+  echo "Installing Ansible..."
+  brew install ansible
+else
+  echo "Ansible already installed, skipping..."
+fi
+
+# Clone the repo
+git clone --quiet $git_repo $project_dir
+
+# Provision
+pushd $project_dir
+  ansible-playbook $boot_play -c local -l localhost -v
+popd
