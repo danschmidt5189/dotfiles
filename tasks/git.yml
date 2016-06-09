@@ -1,4 +1,8 @@
 # git tasks
+- name: Set local git config.
+  set_fact: git_config_email={{ansible_local.dotfiles.git.git_config_email}}
+  when: ansible_local.dotfiles.git.git_config_email is defined
+
 - name: Create git template directories.
   file: name={{ansible_env.HOME}}/.config/git state=directory
 
