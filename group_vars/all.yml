@@ -16,6 +16,7 @@ brew_pkgs:
   - tmux
   - git
   - vim
+  - nmap
 
 # homebrew taps to use (Darwin-only)
 brew_taps:
