@@ -16,24 +16,38 @@ source <(curl -s "https://raw.githubusercontent.com/danschmidt5189/dotfiles/mast
     git@github.com:danschmidt5189/dotfiles.git
 ```
 
-## Running Ansible
+## Ansible
 
-Once the repo's been bootstrapped, machines can be provisioned using Ansible plays.
+### Custom Inventory
 
-Useful flags include:
+Inventory files are stored in the `inventory` directory. Dotfiles ships with only `inventory/localhost`, which points to the local machine, but you can include a custom inventory by defining it elsewhere and symlinking it to `inventory`.
 
-- `-l <host pattern>` — Limits play to hosts matching the given pattern
-- `-t <tags>` — Limits play to tasks with the given (comma-separated) tags
+For example, the bootstrap script includes `/etc/ansible/dotfiles.hosts`.
 
-Examples:
+### Custom Facts
+
+Dotfiles allows host-specific customizations by specifying variables in `/etc/ansible/facts.d/dotfiles.fact`.
+
+For example, this can be used to customize the Git config like so:
 
 ```bash
-# Configure localhost (knows to use ssh_connection=local)
+cat /etc/ansible/facts.d/dotfiles.fact
+[git]
+git_config_email = foo@bar.com
+```
+
+### Running Plays
+
+```bash
+# Provision all machines
+ansible-playbook dotfiles.yml
+
+# Provision localhost only
 ansible-playbook dotfiles.yml -l localhost
 
-# Configure git everywhere
+# Run only the "git" tasks
 ansible-playbook dotfiles.yml -t git
 
-# Configure zsh and homebrew (brew will only run on OSX hosts)
-ansible-playbook dotfiles.yml -t zsh,brew
+# Run "zsh" and "brew" tasks, but only on hosts in the "laptops" group
+ansible-playbook dotfiles.yml -t zsh,brew -l laptops
 ```

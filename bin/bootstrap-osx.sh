@@ -40,7 +40,12 @@ fi
 
 # Clone the repo
 git clone $git_repo $project_dir
-
-# Provision
 pushd $project_dir
+
+# Symlink local dotfiles inventory
+if [ -e /etc/ansible/dotfiles.hosts ]; then
+  ln -s /etc/ansible/dotfiles.hosts inventory/dotfiles
+fi
+
+# Provision the machine
 ansible-playbook dotfiles.yml -l localhost -v
