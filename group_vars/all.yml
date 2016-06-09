@@ -6,7 +6,6 @@ brew_casks:
 
 # homebrew packages to install (Darwin-only)
 brew_pkgs:
-  - brew-cask
   - coreutils
   - zsh
   - ssh-copy-id
@@ -19,8 +18,7 @@ brew_pkgs:
   - vim
 
 # homebrew taps to use (Darwin-only)
-brew_taps:
-  - caskroom/versions
+brew_taps: []
 
 # gitconfig: user.name
 git_config_name: Daniel Schmidt
@@ -36,3 +34,6 @@ oh_my_zsh_install_url: https://raw.githubusercontent.com/danschmidt5189/oh-my-zs
 
 # oh-my-zsh plugins to install. Override per-operating system as necessary.
 oh_my_zsh_plugins: gitfast nyan vi-mode
+
+# Sublime Text's configuration directory
+sublime_text_root: /Users/dschmidt/Library/Application Support/Sublime Text 3

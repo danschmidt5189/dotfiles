@@ -1,12 +1,3 @@
 # Darwin prereqs
-- name: Install Homebrew taps.
-  homebrew_tap: tap={{item}} state=present
-  with_items: "{{brew_taps}}"
-
-- name: Install Homebrew packages.
-  homebrew: name={{item}} state=present
-  with_items: "{{brew_pkgs}}"
-
-- name: Install Homebrew casks.
-  homebrew_cask: name={{item}} state=present
-  with_items: "{{brew_casks}}"
+- { include: homebrew.yml, tags: [homebrew] }
+- { include: sublime.yml, tags: [sublime] }

@@ -1,0 +1,4 @@
+# common tasks (all operating systems)
+- { include: "install-{{ansible_os_family}}.yml", tags: [prereqs] }
+- { include: zsh.yml, tags: [zsh] }
+- { include: git.yml, tags: [git] }

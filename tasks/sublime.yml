@@ -1,0 +1,6 @@
+# sublime text
+- name: Customize Sublime Text 3.
+  template:
+    dest: "{{ sublime_text_root }}/Packages/User/Preferences.sublime-settings"
+    src: ../templates/sublime-text-3/Preferences.sublime-settings.j2
+  tags: [sublime]

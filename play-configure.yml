@@ -1,5 +1,6 @@
+# Configures the given SSH user's dotfiles on the target host
 - hosts: all
+  vars_files:
+    - vars/os-{{ansible_os_family}}.yml
   tasks:
-    - include_vars: vars/os-{{ansible_os_family}}.yml
-    - include: tasks/install-{{ansible_os_family}}.yml
-    - include: tasks/common.yml
+    - include: tasks/main.yml
