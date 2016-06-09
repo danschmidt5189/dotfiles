@@ -43,4 +43,4 @@ git clone $git_repo $project_dir
 
 # Provision
 pushd $project_dir
-ansible-playbook play-configure.yml --connection=local --limit=localhost --verbose
+ansible-playbook dotfiles.yml -l localhost -v

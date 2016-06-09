@@ -1,3 +1,0 @@
-# Darwin prereqs
-- { include: homebrew.yml, tags: [homebrew] }
-- { include: sublime.yml, tags: [sublime] }

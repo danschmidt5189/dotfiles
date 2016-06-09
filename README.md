@@ -20,10 +20,20 @@ source <(curl -s "https://raw.githubusercontent.com/danschmidt5189/dotfiles/mast
 
 Once the repo's been bootstrapped, machines can be provisioned using Ansible plays.
 
-```bash
-# Provision localhost
-ansible-playbook play-configure.yml -c local -l localhost
+Useful flags include:
 
-# Provision remote host
-ansible-playbook play-configure.yml -l {{ hosts to target }}
+- `-l <host pattern>` — Limits play to hosts matching the given pattern
+- `-t <tags>` — Limits play to tasks with the given (comma-separated) tags
+
+Examples:
+
+```bash
+# Configure localhost (knows to use ssh_connection=local)
+ansible-playbook dotfiles.yml -l localhost
+
+# Configure git everywhere
+ansible-playbook dotfiles.yml -t git
+
+# Configure zsh and homebrew (brew will only run on OSX hosts)
+ansible-playbook dotfiles.yml -t zsh,brew
 ```

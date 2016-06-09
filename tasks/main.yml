@@ -1,4 +1,15 @@
 # common tasks (all operating systems)
-- { include: "install-{{ansible_os_family}}.yml", tags: [prereqs] }
-- { include: zsh.yml, tags: [zsh] }
-- { include: git.yml, tags: [git] }
+
+- include: homebrew.yml
+  when: ansible_os_family == 'Darwin'
+  tags: [brew]
+
+- include: sublime.yml
+  when: ansible_os_family == 'Darwin'
+  tags: [sublime]
+
+- include: zsh.yml
+  tags: [zsh]
+
+- include: git.yml
+  tags: [git] 
