@@ -6,10 +6,10 @@
 
 - include: sublime.yml
   when: ansible_os_family == 'Darwin'
-  tags: [sublime]
+  tags: [subl]
 
 - include: zsh.yml
   tags: [zsh]
 
 - include: git.yml
-  tags: [git] 
+  tags: [git]

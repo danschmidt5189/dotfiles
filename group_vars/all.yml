@@ -18,7 +18,8 @@ brew_pkgs:
   - vim
 
 # homebrew taps to use (Darwin-only)
-brew_taps: []
+brew_taps:
+  - caskroom/versions
 
 # gitconfig: user.name
 git_config_name: Daniel Schmidt
@@ -36,4 +37,4 @@ oh_my_zsh_install_url: https://raw.githubusercontent.com/danschmidt5189/oh-my-zs
 oh_my_zsh_plugins: gitfast nyan vi-mode
 
 # Sublime Text's configuration directory
-sublime_text_root: /Users/dschmidt/Library/Application Support/Sublime Text 3
+sublime_text_root: "{{ansible_env.HOME}}/Library/Application Support/Sublime Text 3"

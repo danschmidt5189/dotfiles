@@ -1,4 +1,26 @@
 # homebrew installs
+
+- name: Uninstall deprecated cask package.
+  homebrew: name=brew-cask state=absent
+
+- name: Clear deprecated cask tap.
+  homebrew_tap: name=phinze/cask state=absent
+
+- name: Brew update.
+  homebrew: update_homebrew=yes
+
+- name: Brew cleanup.
+  shell: brew cleanup
+  register: brew_clean
+  changed_when: >
+    "This operation has freed" in brew_clean.stdout
+
+- name: Brew cask cleanup.
+  shell: brew cask cleanup
+  register: brew_cask_clean
+  changed_when: >
+    "This operation has freed" in brew_cask_clean.stdout
+
 - name: Install Homebrew taps.
   homebrew_tap: tap={{item}} state=present
   with_items: "{{brew_taps}}"
