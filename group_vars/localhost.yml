@@ -1,2 +1,4 @@
-# Darwin-only vars
+# vars for localhost-only
+
+# oh-my-zsh plugins to install. Override per-operating system as necessary.
 oh_my_zsh_plugins: brew calvpn docker gitfast nyan osx ssh-agent tmux vagrant vi-mode zsh-syntax-highlighting
