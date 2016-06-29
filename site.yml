@@ -1,4 +1,7 @@
+#! /usr/bin/env ansible-playbook -v
+---
 # Configures the given SSH user's dotfiles on the target host
 - hosts: all
   tasks:
     - include: tasks/main.yml
+

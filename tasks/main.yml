@@ -2,14 +2,14 @@
 
 - include: homebrew.yml
   when: ansible_os_family == 'Darwin'
-  tags: [brew]
+  tags: brew
 
 - include: sublime.yml
   when: ansible_os_family == 'Darwin'
-  tags: [subl]
+  tags: subl
 
 - include: zsh.yml
-  tags: [zsh]
+  tags: zsh
 
 - include: git.yml
-  tags: [git]
+  tags: git
