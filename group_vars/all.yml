@@ -2,25 +2,25 @@
 
 # homebrew casks to use (Darwin-only)
 brew_casks:
-  - sublime-text3
+- sublime-text3
 
 # homebrew packages to install (Darwin-only)
 brew_pkgs:
-  - coreutils
-  - zsh
-  - ssh-copy-id
-  - tree
-  - wget
-  - openssl
-  - libyaml
-  - tmux
-  - git
-  - vim
-  - nmap
+- coreutils
+- zsh
+- ssh-copy-id
+- tree
+- wget
+- openssl
+- libyaml
+- tmux
+- git
+- vim
+- nmap
 
 # homebrew taps to use (Darwin-only)
 brew_taps:
-  - caskroom/versions
+- caskroom/versions
 
 # gitconfig: user.name
 git_config_name: Daniel Schmidt
@@ -38,4 +38,4 @@ oh_my_zsh_install_url: https://raw.githubusercontent.com/danschmidt5189/oh-my-zs
 oh_my_zsh_plugins: gitfast nyan vi-mode
 
 # Sublime Text's configuration directory
-sublime_text_root: "{{ansible_env.HOME}}/Library/Application Support/Sublime Text 3"
+sublime_text_root: "{{ ansible_env.HOME }}/Library/Application Support/Sublime Text 3"
