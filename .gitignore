@@ -1,3 +1,4 @@
 # Ignore custom inventory files, but keep localhost around
 inventory/*
 !inventory/localhost
+*.retry
