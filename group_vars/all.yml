@@ -35,7 +35,7 @@ git_config_email: dcschmidt@berkeley.edu
 oh_my_zsh_install_url: https://raw.githubusercontent.com/danschmidt5189/oh-my-zsh/master/tools/install.sh
 
 # oh-my-zsh plugins to install. Override per-operating system as necessary.
-oh_my_zsh_plugins: gitfast nyan vi-mode
+oh_my_zsh_plugins: gitfast vi-mode
 
 # Sublime Text's configuration directory
 sublime_text_root: "{{ ansible_env.HOME }}/Library/Application Support/Sublime Text 3"
